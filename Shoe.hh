@@ -18,12 +18,18 @@ class Shoe {
   virtual
   ~Shoe();
 
-  void
-  Shuffle();
+  Card
+  deal();
 
+  void
+  shuffle();
+
+  int
+  size();
+  
   private:
 
-  std::vector<Card*> _cards;
+  std::vector<Card> _cards;
 
 };
 

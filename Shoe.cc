@@ -11,19 +11,34 @@ Shoe::Shoe(int decks)
     {
       for (int s = Card::CLUBS; s < Card::SPADES; s++)
       {
-        _cards.push_back(new Card((Card::Suit)s, (Card::Pips) p));
+        _cards.push_back(Card((Card::Suit)s, (Card::Pips) p));
       }
     }
   }
-  Shuffle();
+  shuffle();
 }
 
 Shoe::~Shoe()
 {
 }
 
+Card
+Shoe::deal()
+{
+  Card dealt = _cards.back();
+  _cards.pop_back();
+  return dealt;
+}
+
 void
-Shoe::Shuffle()
+Shoe::shuffle()
 {
   std::random_shuffle(_cards.begin(), _cards.end());
+}
+
+
+int
+Shoe::size()
+{
+  return _cards.size();
 }

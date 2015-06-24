@@ -14,7 +14,12 @@ class Blackjack {
   virtual
   ~Blackjack();
 
+  void
+  printHand(std::vector<Card> hand);
+
   Shoe _shoe;
+  std::vector<Card> dealer;
+  std::vector<Card> player;
   
 };
 
